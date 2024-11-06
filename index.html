@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-App mit eingebetteter Seite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+            background-color: #00796b;
+            color: white;
+        }
+        #content {
+            margin: 20px;
+        }
+        button {
+            background-color: #ef534f;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+        #iframeContainer {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+    </style>
+    <script>
+        function loadPage() {
+            const iframeContainer = document.getElementById("iframeContainer");
+            iframeContainer.style.display = "block"; // Zeigt das iframe an
+            iframeContainer.src = "https://freetether.com/?ref=414079"; // Setzt die URL
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Willkommen in meiner Web-App</h1>
+        <p>Klicke den Button unten, um Tether kostenlos zu verdienen!</p>
+    </header>
+
+    <div id="content">
+        <button onclick="loadPage()">Tether kostenlos verdienen</button>
+        <iframe id="iframeContainer"></iframe>
+    </div>
+</body>
+</html>
